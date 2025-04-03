@@ -1,5 +1,36 @@
-import 'package:exercicios_aula_praticando_collections_dart/exercicios_aula_praticando_collections_dart.dart' as exercicios_aula_praticando_collections_dart;
+//  Fazendo recomendações em um e-commerce
+/*
+João trabalha em uma plataforma de e-commerce e está implementando
+ uma funcionalidade de recomendação de produtos. 
+ Ele possui uma lista de produtos que a pessoa usuária visitou e quer verificar
+  se algum item visitado já foi adicionado ao carrinho. 
 
-void main(List<String> arguments) {
-  print('Hello world: ${exercicios_aula_praticando_collections_dart.calculate()}!');
+  Crie uma função que receba as listas de produtos visitados e no carrinho,
+   exibindo os itens visitados que ainda não estão no carrinho.
+  */
+
+
+void main() {
+ 
+// Este é apenas um exemplo, os valores que as listas possuem podem variar. 
+
+List<String> produtosCarrinho = ["arroz", "feijão", "macarrão", "leite", "açúcar"]; 
+
+List<String> produtosVisitados = ["sal", "óleo", "macarrão", "leite", "açúcar"]; 
+
+exibirNaoAdicionados(produtosVisitados, produtosCarrinho);
+}
+
+void exibirNaoAdicionados(List<String> visitados, List<String> carrinho) { 
+
+  for (String produto in visitados) { 
+
+    if (!carrinho.contains(produto)) { 
+
+      print(produto); 
+
+    } 
+
+  } 
+
 }
