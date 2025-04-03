@@ -1,45 +1,30 @@
-
 /*
-  Uma loja tem dois sets de promoções. Um contém os identificadores (ID) dos produtos
-  da promoção da semana, enquanto o outro contém os identificadores dos produtos
-  da promoção de fim de mês. 
+  Uma empresa está desenvolvendo um sistema de CRM. 
+  O sistema armazena os clientes e suas respectivas pontuações de fidelidade.
+  Agora, cada cliente é representado por um mapa contendo o nome e a pontuação.
+  Você deve criar uma função que percorra a lista de clientes e exiba os nomes
+  dos clientes com pontuação superior a 7.  
 
-  Crie uma função que receba os dois sets e exiba todos os IDs que estão em qualquer uma das promoções. 
+  Crie uma função que percorra a lista de clientes e exiba os nomes dos clientes com pontuação superior a 7.
 */
 
-void main() { 
+void main() {
+// Lista de mapas, onde cada mapa contém o nome e a pontuação de um cliente.
 
-// Este é apenas um exemplo, os valores que a lista possui podem variar.
+  List<Map<String, dynamic>> clientes = [
+    {"nome": "João", "pontuacao": 6.5},
+    {"nome": "Maria", "pontuacao": 8.7},
+    {"nome": "Pedro", "pontuacao": 9.2},
+    {"nome": "Ana", "pontuacao": 5.4}
+  ];
 
-Set<int> produtosSemana = {1, 2, 3, 4};   
-
-Set<int> produtosMes = {5, 1, 3, 8}; 
-
-controlePromocoes(produtosSemana, produtosMes);
-
+  exibirClientesFieis(clientes);
 }
 
-
-void controlePromocoes(Set<int> produtosSemana, Set<int> produtosMes) { 
-
-  Set<int> resultado = {}; 
-
-  for (int produto in produtosSemana) { 
-
-    resultado.add(produto); 
-
-  } 
-
-  for (int produto in produtosMes) { 
-
-      resultado.add(produto); 
-
-  } 
-
-  for (int produto in resultado) { 
-
-    print(produto); 
-
-  } 
-
-} 
+void exibirClientesFieis(List<Map<String, dynamic>> clientes) {
+  for (Map<String, dynamic> cliente in clientes) {
+    if (cliente["pontuacao"] > 7) {
+      print(cliente["nome"]);
+    }
+  }
+}
