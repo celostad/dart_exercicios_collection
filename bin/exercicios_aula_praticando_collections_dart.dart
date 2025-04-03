@@ -1,35 +1,25 @@
-//  Fazendo recomendações em um e-commerce
+
 /*
-João trabalha em uma plataforma de e-commerce e está implementando
- uma funcionalidade de recomendação de produtos. 
- Ele possui uma lista de produtos que a pessoa usuária visitou e quer verificar
-  se algum item visitado já foi adicionado ao carrinho. 
-
-  Crie uma função que receba as listas de produtos visitados e no carrinho,
-   exibindo os itens visitados que ainda não estão no carrinho.
-  */
+A Dev Kanban está desenvolvendo um aplicativo de produtividade
+ onde as pessoas usuárias podem verificar suas tarefas.
+*/
 
 
-void main() {
- 
-// Este é apenas um exemplo, os valores que as listas possuem podem variar. 
+void main() { 
 
-List<String> produtosCarrinho = ["arroz", "feijão", "macarrão", "leite", "açúcar"]; 
+// Este é apenas um exemplo, os valores que a lista possui podem variar. 
 
-List<String> produtosVisitados = ["sal", "óleo", "macarrão", "leite", "açúcar"]; 
+List<String> tarefas = ["Estudar", "Comprar mantimentos"]; 
 
-exibirNaoAdicionados(produtosVisitados, produtosCarrinho);
+
+exibirListaTarefa(tarefas);
 }
 
-void exibirNaoAdicionados(List<String> visitados, List<String> carrinho) { 
+void exibirListaTarefa(List<String> tarefas) { 
 
-  for (String produto in visitados) { 
+  for (String tarefa in tarefas) { 
 
-    if (!carrinho.contains(produto)) { 
-
-      print(produto); 
-
-    } 
+      print(tarefa); 
 
   } 
 
