@@ -1,30 +1,45 @@
 
 /*
-  Uma empresa está gerenciando o inventário de seus produtos e precisa de uma solução
-  para monitorar a quantidade de unidades de certos itens em seu estoque. 
-  Para isso, você deve criar uma função que, dado uma lista de produtos, 
-  conte quantas vezes o item "maçã" aparece na lista de produtos. 
+  Uma loja tem dois sets de promoções. Um contém os identificadores (ID) dos produtos
+  da promoção da semana, enquanto o outro contém os identificadores dos produtos
+  da promoção de fim de mês. 
+
+  Crie uma função que receba os dois sets e exiba todos os IDs que estão em qualquer uma das promoções. 
 */
 
 void main() { 
 
-// Este é apenas um exemplo, os valores que a lista possui podem variar. 
+// Este é apenas um exemplo, os valores que a lista possui podem variar.
 
-List<String> produtos = ["maçã", "banana", "maçã", "laranja", "maçã"]; 
+Set<int> produtosSemana = {1, 2, 3, 4};   
 
-print(contarMacas(produtos));
+Set<int> produtosMes = {5, 1, 3, 8}; 
 
-}
-
-
-int contarMacas(List<String> produtos) { 
-  int totalMaca = 0;
-  for (String produto in produtos) {
-    if(produto == "maçã"){
-      totalMaca++;
-    }
-  }
-
-  return totalMaca;
+controlePromocoes(produtosSemana, produtosMes);
 
 }
+
+
+void controlePromocoes(Set<int> produtosSemana, Set<int> produtosMes) { 
+
+  Set<int> resultado = {}; 
+
+  for (int produto in produtosSemana) { 
+
+    resultado.add(produto); 
+
+  } 
+
+  for (int produto in produtosMes) { 
+
+      resultado.add(produto); 
+
+  } 
+
+  for (int produto in resultado) { 
+
+    print(produto); 
+
+  } 
+
+} 
